@@ -150,6 +150,31 @@
   <button>get user values</button>
 </form>
 
+/--------------------------------------------------------------------/ 
+<app-header></app-header>
+<h1>Header and Footer in Angular</h1>
+<app-footer></app-footer>
+
+/--------------------------------------------------------------------/ 
+<h1>Style Binding in Angular</h1>
+
+<h1 style="color: red">Heading 0</h1>
+
+<h1 [style.color]="'green'">Heading 1</h1>
+<h1 [style.backgroundColor]="'blue'">Heading 2 binding style</h1>
+<h1 [style.color]="color">Dynamic style 1</h1>
+
+<button (click)="updateColor()">Update color</button>
+
+<h1 [style.color]="err ? 'red' : 'green'">red if error</h1>
+
 /--------------------------------------------------------------------/ -->
 
-<h1>Header and Footer in Angular</h1>
+<h1>Add bootstrap in Angular 10</h1>
+
+<p>
+  <ngb-alert [dismissible]="false">
+    <strong>Warning!</strong> Better check yourself, you're not looking too
+    good.
+  </ngb-alert>
+</p>

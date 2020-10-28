@@ -79,7 +79,12 @@ export class AppComponent {
   //     age: 27,
   //   },
   // ];
-  getUserValue(value) {
-    console.warn(value);
+  // getUserValue(value) {
+  //   console.warn(value);
+  // }
+  color = 'orange';
+  err = false;
+  updateColor() {
+    this.color = 'purple';
   }
 }

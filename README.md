@@ -9,3 +9,5 @@ Teaching myself Angular fundamentals
 - all work that will do will be in src 
 - in src/enviornment we test our code in different enviornemnt 
 - int src/assets we have files like images/logos etc 
+
+

@@ -6,9 +6,23 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserModuleModule } from './user-module/user-module.module';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
-  declarations: [AppComponent, UserListComponent], // for components
-  imports: [BrowserModule, AppRoutingModule, UserModuleModule, FormsModule], // for modules
+  declarations: [
+    AppComponent,
+    UserListComponent,
+    HeaderComponent,
+    FooterComponent,
+  ], // for components
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    UserModuleModule,
+    FormsModule,
+    NgbModule,
+  ], // for modules
   providers: [],
   bootstrap: [AppComponent],
 })
