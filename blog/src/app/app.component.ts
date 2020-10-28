@@ -1,4 +1,45 @@
 import { Component } from '@angular/core';
+import { HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
+
+// interface Alert {
+//   type: string;
+//   message: string;
+// }
+
+// const ALERTS: Alert[] = [
+//   {
+//     type: 'success',
+//     message: 'This is an success alert',
+//   },
+//   {
+//     type: 'info',
+//     message: 'This is an info alert',
+//   },
+//   {
+//     type: 'warning',
+//     message: 'This is a warning alert',
+//   },
+//   {
+//     type: 'danger',
+//     message: 'This is a danger alert',
+//   },
+//   {
+//     type: 'primary',
+//     message: 'This is a primary alert',
+//   },
+//   {
+//     type: 'secondary',
+//     message: 'This is a secondary alert',
+//   },
+//   {
+//     type: 'light',
+//     message: 'This is a light alert',
+//   },
+//   {
+//     type: 'dark',
+//     message: 'This is a dark alert',
+//   },
+// ];
 
 @Component({
   selector: 'app-root',
@@ -43,20 +84,21 @@ export class AppComponent {
   //   console.warn(val);
   //   this.currentVal = val;
   // }
-  // ---------------------------------------------------
-  // Property Binding
+  // -------------------Property Binding--------------------------------
+  //
   // name = 'James Bond';
   // disabledBox = true;
   // enableBox() {
   //   this.disabledBox = false;
   // }
-  // ---------------------------------------------------
-  // Conditions
+  // ----------------------Conditions-----------------------------
+  //
   //show = true;
   //show = 'blue';\
   //color = 'red';
-  // ---------------------------------------------------
-  // For loops in Angular
+  // --------------------For loops in Angular-------------------------------
+  //
+  //
   //data = ['faaiz', 'rehan', 'banoori'];
   // data = [
   //   {
@@ -82,9 +124,70 @@ export class AppComponent {
   // getUserValue(value) {
   //   console.warn(value);
   // }
-  color = 'orange';
-  err = false;
-  updateColor() {
-    this.color = 'purple';
+  // color = 'orange';
+  // err = false;
+  // updateColor() {
+  //   this.color = 'purple';
+  // }
+  //-----------------BootStrap in Angular-----------------------------
+  // model = {
+  //   left: true,
+  //   middle: false,
+  //   right: false,
+  // };
+  //-----------------Data from parent to child in Angular-----------------------------
+  //data = 'this is the data string';
+  // data = {
+  //   first: 'James',
+  //   last: 'Bond',
+  // };
+
+  //-----------------Make a component reusable in Angular-----------------------------
+  // users = {
+  //   first: 'James',
+  //   last: 'Bond',
+  // };
+  // users = [
+  //   {
+  //     first: 'James',
+  //     last: 'Bond',
+  //   },
+  //   {
+  //     first: 'Faaiz',
+  //     last: 'Masood',
+  //   },
+  //   {
+  //     first: 'Bat',
+  //     last: 'Man',
+  //   },
+  //   {
+  //     first: 'James',
+  //     last: 'Bond',
+  //   },
+  // ];
+
+  //-----------------Testing myself-----------------------------
+  name = 'faaiz';
+  getName(val) {
+    this.name = val;
+    alert(val);
   }
+  changeColor = false;
+  changeCol() {
+    this.changeColor = true;
+  }
+  show = true;
+  enableField() {
+    this.show = false;
+  }
+  obj = [
+    {
+      name: 'Christiano',
+      age: 35,
+    },
+    {
+      name: 'Messi',
+      age: 33,
+    },
+  ];
 }

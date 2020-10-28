@@ -168,13 +168,51 @@
 
 <h1 [style.color]="err ? 'red' : 'green'">red if error</h1>
 
-/--------------------------------------------------------------------/ -->
+/--------------------------------------------------------------------/ 
 
 <h1>Add bootstrap in Angular 10</h1>
 
-<p>
-  <ngb-alert [dismissible]="false">
-    <strong>Warning!</strong> Better check yourself, you're not looking too
-    good.
-  </ngb-alert>
-</p>
+<div class="btn-group btn-group-toggle">
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.left" /> Left
+    (pre-checked)
+  </label>
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.middle" /> Middle
+  </label>
+  <label class="btn-primary" ngbButtonLabel>
+    <input type="checkbox" ngbButton [(ngModel)]="model.right" /> Right
+  </label>
+</div>
+<hr />
+<pre>{{ model | json }}</pre>
+
+/--------------------------------------------------------------------/ 
+
+<h1>Add Material UI in Angular 10</h1>
+<button mat-raised-button color="primary">Angular Button</button>
+<button mat-raised-button color="warn">Warn</button>
+<mat-slider min="1" max="100"></mat-slider>
+
+/--------------------------------------------------------------------/ 
+
+<h1>Pass Data parent to child component in angular</h1>
+<app-users [hero]="data"></app-users>
+
+/--------------------------------------------------------------------/ 
+<h1>Make a component reusable in Angular</h1>
+<div *ngFor="let data of users">
+  <app-users [hero]="data"></app-users>
+</div>
+
+/--------------------------------------------------------------------/ -->
+<h1>Testing myself</h1>
+<input type="text" #box />
+<button (click)="getName(box.value)">Click me to display my name</button>
+<h1 [style.color]="changeColor ? 'red' : 'blue'">This is color</h1>
+<button (click)="changeCol()">Click change color</button>
+<input type="text" [disabled]="show" value="enter your name" />
+<button (click)="enableField()">Click to enable</button>
+<div>
+  <h1 *ngFor="let x of obj">{{ x.name }}{{ x.age }}</h1>
+</div>
