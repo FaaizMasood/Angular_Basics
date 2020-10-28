@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Youtube';
-  name = 'faaiz Masood';
+  //name = 'faaiz Masood';
   // function
   // getName() {
   //   return this.name;
@@ -38,9 +38,48 @@ export class AppComponent {
   //   console.warn(evt);
   // }
 
-  currentVal = '';
-  getVal(val) {
-    console.warn(val);
-    this.currentVal = val;
+  // currentVal = '';
+  // getVal(val) {
+  //   console.warn(val);
+  //   this.currentVal = val;
+  // }
+  // ---------------------------------------------------
+  // Property Binding
+  // name = 'James Bond';
+  // disabledBox = true;
+  // enableBox() {
+  //   this.disabledBox = false;
+  // }
+  // ---------------------------------------------------
+  // Conditions
+  //show = true;
+  //show = 'blue';\
+  //color = 'red';
+  // ---------------------------------------------------
+  // For loops in Angular
+  //data = ['faaiz', 'rehan', 'banoori'];
+  // data = [
+  //   {
+  //     name: 'faaiz',
+  //     age: 23,
+  //     email: 'faaiz.gmail.com',
+  //   },
+  //   {
+  //     name: 'rehan',
+  //     age: 29,
+  //     email: 'rehan.gmail.com',
+  //   },
+  //   {
+  //     name: 'banoori',
+  //     age: 20,
+  //     email: 'banoori.gmail.com',
+  //   },
+  //   {
+  //     name: 'omar',
+  //     age: 27,
+  //   },
+  // ];
+  getUserValue(value) {
+    console.warn(value);
   }
 }

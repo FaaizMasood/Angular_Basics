@@ -44,10 +44,112 @@
   Mouse Events
 </div>
 
-/--------------------------------------------------------------------/  -->
+/--------------------------------------------------------------------/  
 
 <h1>Important events in Angular</h1>
-<!-- <input type="text" (keyup)="getVal($event.target.value)" /> -->
+
+<button (click)="myEvent('this is click event')">Click Me</button>
+<br />
+<br />
+<input
+  type="text"
+  #box
+  (mouseover)="myEvent('mouse in')"
+  (blur)="myEvent(box.value)"
+/>
+<div
+  (blur)="myEvent(box.value)"
+  (mouseover)="myEvent('mouse in')"
+  style="background-color: skyblue"
+>
+  Mouse Event
+</div>  
+
+
+/--------------------------------------------------------------------/ 
+
 <input type="text" #box />
 <button (click)="getVal(box.value)">Get Value</button>
-<h2>{{ currentVal }}</h2>
+<h1>{{ currentVal }}</h1>
+
+/--------------------------------------------------------------------/ 
+<h1>Property Binding</h1>
+<br />
+<br />
+<input type="text" [disabled]="disabledBox" [value]="name" />
+<br />
+<br />
+<input type="text" disabled="{{ disabledBox }}" value="{{ name }}" />
+<br />
+<br />
+<button (click)="enableBox()">Enable TextBox</button>
+
+/--------------------------------------------------------------------/ 
+<h1>Conditions in Angular</h1>
+
+<br />
+<h1 *ngIf="show == 'yes'; then ifBlock; else elseBlock">If block</h1>
+<ng-template #ifBlock>
+  <h1>if Block</h1>
+</ng-template>
+<ng-template #elseBlock>
+  <h1>else Block</h1>
+</ng-template> 
+
+<ng-template [ngIf]="show == 'red'">
+  <h1>red</h1>
+</ng-template>
+<ng-template [ngIf]="show == 'blue'">
+  <h1>blue</h1>
+</ng-template>
+<ng-template [ngIf]="show == 'green'">
+  <h1>green</h1>
+</ng-template>
+
+/--------------------------------------------------------------------/ 
+
+<h1>Switch in Angular</h1>
+
+<div [ngSwitch]="color">
+  <h2 style="color: red" *ngSwitchCase="'red'">red Color</h2>
+  <h2 *ngSwitchCase="'blue'">Blue Color</h2>
+  <h2 *ngSwitchCase="'Green'">Green Color</h2>
+</div>
+
+/--------------------------------------------------------------------/ 
+
+<h1>For Loops in Angular</h1>
+<br />
+<h4 *ngFor="let item of data">{{ item.name }}{{ item.age }}</h4> 
+
+<table border="1">
+  <tr>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Email</td>
+  </tr>
+  <tr *ngFor="let item of data">
+    <td>{{ item.name }}</td>
+    <td>{{ item.age }}</td>
+    <td>{{ item.email }}</td>
+  </tr>
+</table>
+
+/--------------------------------------------------------------------/ 
+
+<h1>Simple form in Angular</h1>
+<br />
+<form #simpleForm="ngForm" (ngSubmit)="getUserValue(simpleForm.value)">
+  <input type="text" ngModel name="username" placeholder="enter name" />
+  <br />
+  <input type="text" ngModel name="age" placeholder="enter age" />
+  <br />
+  <input type="text" ngModel name="address" placeholder="enter address" />
+  <br />
+  <input type="password" ngModel name="password" placeholder="enter password" />
+  <button>get user values</button>
+</form>
+
+/--------------------------------------------------------------------/ -->
+
+<h1>Header and Footer in Angular</h1>
