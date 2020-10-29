@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
+import { UsersDataService } from './users-data.service';
 
 // interface Alert {
 //   type: string;
@@ -167,27 +168,48 @@ export class AppComponent {
   // ];
 
   //-----------------Testing myself-----------------------------
-  name = 'faaiz';
-  getName(val) {
-    this.name = val;
-    alert(val);
+  // name = 'faaiz';
+  // getName(val) {
+  //   this.name = val;
+  //   alert(val);
+  // }
+  // changeColor = false;
+  // changeCol() {
+  //   this.changeColor = true;
+  // }
+  // show = true;
+  // enableField() {
+  //   this.show = false;
+  // }
+  // obj = [
+  //   {
+  //     name: 'Christiano',
+  //     age: 35,
+  //   },
+  //   {
+  //     name: 'Messi',
+  //     age: 33,
+  //   },
+  // ];
+  //-------------------data from child to parent-------------
+  // name = '';
+  // parentComponent(data) {
+  //   console.warn(data);
+  //   this.name = data.name;
+  // }
+
+  //-------------------Pipe in Angular-------------
+  // name = 'FaaIz MAsood';
+  // today = Date.now();
+  // str = 'hello angular';
+  // val = 10;
+
+  //-------------------end-------------
+  name = '';
+  constructor(private user: UsersDataService) {
+    let data = this.user.getData();
+    //console.warn(this.user.getData());
+    this.name = data.name;
+    console.log(name);
   }
-  changeColor = false;
-  changeCol() {
-    this.changeColor = true;
-  }
-  show = true;
-  enableField() {
-    this.show = false;
-  }
-  obj = [
-    {
-      name: 'Christiano',
-      age: 35,
-    },
-    {
-      name: 'Messi',
-      age: 33,
-    },
-  ];
 }

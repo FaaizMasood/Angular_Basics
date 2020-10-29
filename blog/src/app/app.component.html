@@ -205,7 +205,7 @@
   <app-users [hero]="data"></app-users>
 </div>
 
-/--------------------------------------------------------------------/ -->
+/--------------------------------------------------------------------/ 
 <h1>Testing myself</h1>
 <input type="text" #box />
 <button (click)="getName(box.value)">Click me to display my name</button>
@@ -216,3 +216,30 @@
 <div>
   <h1 *ngFor="let x of obj">{{ x.name }}{{ x.age }}</h1>
 </div>
+
+--------------------------------------------------------------------/
+
+<h1>Transfer Data from child to parent</h1>
+<app-users (parentComponent)="parentComponent($event)"></app-users>
+
+<br /><br />
+<br />
+<h3>{{ name }}</h3>
+--------------------------------------------------------------------/  
+
+<h1>Pipe in Angular</h1>
+<h2>{{ name | titlecase }}</h2>
+<h2>{{ today | date: "fullDate" }}</h2>
+<h2>{{ str | slice: 2:3 }}</h2>
+<h2>{{ val | currency: "USD" }}</h2>
+
+--------------------------------------------------------------------/  
+<h1>Custom Directive in Angular</h1>
+<br /><br />
+<h2>Normal Heading</h2>
+<br /><br />
+<h2 appCustomStyle>Custom Heading</h2>
+
+--------------------------------------------------------------------/  -->
+<h1>Services in Angular</h1>
+<h1>{{ name }}</h1>

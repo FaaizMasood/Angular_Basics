@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { UsersComponent } from './users/users.component';
+import { CustomStyleDirective } from './custom-style.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { UsersComponent } from './users/users.component';
     HeaderComponent,
     FooterComponent,
     UsersComponent,
+    CustomStyleDirective,
   ], // for components
   imports: [
     BrowserModule,
