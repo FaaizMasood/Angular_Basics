@@ -321,7 +321,97 @@
 </ul>
 <router-outlet></router-outlet>
 
--------------------------------------------------------------------/  -->
+-------------------------------------------------------------------/  
 <h1>Lazy loading for a component</h1>
-<button (click)="loadAdmin()">Load admin list</button>
-<button (click)="loadUser()">Load user list</button>
+<button click="loadAdmin">Load admin list</button>
+<button click="loadUser">Load user list</button>
+
+-------------------------------------------------------------------/  
+
+<h1>Template driven forms</h1>
+<div class="col-sm-6">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        ngModel
+        type="email"
+        class="form-control"
+        name="username"
+        aria-describedby="emailHelp"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input ngModel type="password" class="form-control" name="password" />
+    </div>
+    <div class="form-group form-check">
+      <input
+        ngModel
+        type="checkbox"
+        class="form-check-input"
+        id="exampleCheck1"
+      />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button ngModel type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+-------------------------------------------------------------------/  
+<h1>Reactive forms</h1>
+<div class="col-sm-6">
+  <form [formGroup]="loginForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        ngModel
+        formControlName="email"
+        email
+        aria-describedby="emailHelp"
+      />
+      <span class="red-error" *ngIf="email.invalid && email.touched"
+        >email filled is not Valid</span
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input
+        type="password"
+        ngModel
+        class="form-control"
+        formControlName="password"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Mobile</label>
+      <input
+        maxlength="10"
+        minlength="8"
+        type="text"
+        ngModel
+        class="form-control"
+        formControlName="text"
+      />
+      <span class="red-error" *ngIf="mobile.invalid && mobile.touched"
+        >email filled is not Valid</span
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Adress</label>
+      <input
+        type="text"
+        ngModel
+        class="form-control"
+        formControlName="password"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+-------------------------------------------------------------------/  -->

@@ -5,6 +5,12 @@ import {
 } from '@angular/core';
 import { HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
 import { UsersDataService } from './users-data.service';
+import {
+  FormControl,
+  FormGroupName,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 // nned interface to validae data (Model)
 interface dataType {
@@ -243,29 +249,45 @@ export class AppComponent {
   // }
   //-------------------LazyLoading for a component-------------
   // imported viewContainerRef and ComponentFactoryResolver
-  constructor(
-    private viewContainer: ViewContainerRef,
-    private cfr: ComponentFactoryResolver
-  ) {
-    // turns dynamic code into a component , resolves compinent factory
+  // constructor(
+  //   private viewContainer: ViewContainerRef,
+  //   private cfr: ComponentFactoryResolver
+  // ) {
+  //   // turns dynamic code into a component , resolves compinent factory
+  // }
+  // // async function because it asyncorously loads the data and resolves it from promise
+  // async loadAdmin() {
+  //   this.viewContainer.clear();
+  //   const { AdminlazylistComponent } = await import(
+  //     './adminlazylist/adminlazylist.component'
+  //   );
+  //   this.viewContainer.createComponent(
+  //     this.cfr.resolveComponentFactory(AdminlazylistComponent)
+  //   );
+  // }
+  // async loadUser() {
+  //   this.viewContainer.clear();
+  //   const { UserlistlazyComponent } = await import(
+  //     './userlistlazy/userlistlazy.component'
+  //   );
+  //   this.viewContainer.createComponent(
+  //     this.cfr.resolveComponentFactory(UserlistlazyComponent)
+  //   );
+  // }
+  //-------------------35 videos Done-------------
+  // onSubmit(data) {
+  //   console.warn(data);
+  // }
+  //-------------------reactive form-------------
+  loginForm = new FormGroup({
+    email: new FormControl('', Validators.required),
+    password: new FormControl(''),
+    mobile: new FormControl('', Validators.required),
+  });
+  get email() {
+    return this.loginForm.get('email');
   }
-  // async function because it asyncorously loads the data and resolves it from promise
-  async loadAdmin() {
-    this.viewContainer.clear();
-    const { AdminlazylistComponent } = await import(
-      './adminlazylist/adminlazylist.component'
-    );
-    this.viewContainer.createComponent(
-      this.cfr.resolveComponentFactory(AdminlazylistComponent)
-    );
-  }
-  async loadUser() {
-    this.viewContainer.clear();
-    const { UserlistlazyComponent } = await import(
-      './userlistlazy/userlistlazy.component'
-    );
-    this.viewContainer.createComponent(
-      this.cfr.resolveComponentFactory(UserlistlazyComponent)
-    );
+  get mobile() {
+    return this.loginForm.get('mobile');
   }
 }

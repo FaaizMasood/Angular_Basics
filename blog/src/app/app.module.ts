@@ -17,6 +17,7 @@ import { UsersComponent } from './users/users.component';
 import { CustomStyleDirective } from './custom-style.directive';
 import { UserlistlazyComponent } from './userlistlazy/userlistlazy.component';
 import { AdminlazylistComponent } from './adminlazylist/adminlazylist.component';
+import { ReactiveFormsModule } from '@angular/forms';
 //import { UserrecapModule } from './userrecap/userrecap.module';
 // import { AdminModule } from './admin/admin.module';
 // import { UserroutingModule } from './userrouting/userrouting.module';
@@ -45,6 +46,7 @@ import { AdminlazylistComponent } from './adminlazylist/adminlazylist.component'
     //UserrecapModule,
     //AdminModule,
     //UserroutingModule,
+    ReactiveFormsModule,
   ], // for modules
   providers: [],
   bootstrap: [AppComponent],
