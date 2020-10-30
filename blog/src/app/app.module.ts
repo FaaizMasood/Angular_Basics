@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,24 +15,36 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { UsersComponent } from './users/users.component';
 import { CustomStyleDirective } from './custom-style.directive';
+import { UserlistlazyComponent } from './userlistlazy/userlistlazy.component';
+import { AdminlazylistComponent } from './adminlazylist/adminlazylist.component';
+//import { UserrecapModule } from './userrecap/userrecap.module';
+// import { AdminModule } from './admin/admin.module';
+// import { UserroutingModule } from './userrouting/userrouting.module';
 @NgModule({
   declarations: [
     AppComponent,
-    UserListComponent,
-    HeaderComponent,
-    FooterComponent,
+    //UserListComponent,
+    //HeaderComponent,
+    //FooterComponent,
     UsersComponent,
     CustomStyleDirective,
+    UserlistlazyComponent,
+    AdminlazylistComponent,
   ], // for components
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UserModuleModule,
+    //UserModuleModule,
     FormsModule,
     NgbModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatSliderModule,
+    HttpClientModule,
+    //UserRecapModule,
+    //UserrecapModule,
+    //AdminModule,
+    //UserroutingModule,
   ], // for modules
   providers: [],
   bootstrap: [AppComponent],

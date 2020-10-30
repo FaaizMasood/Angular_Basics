@@ -1,7 +1,18 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ViewContainerRef,
+  ComponentFactoryResolver,
+} from '@angular/core';
 import { HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS } from '@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector';
 import { UsersDataService } from './users-data.service';
 
+// nned interface to validae data (Model)
+interface dataType {
+  name: string;
+  id: number;
+  indian: boolean;
+  address: any;
+}
 // interface Alert {
 //   type: string;
 //   message: string;
@@ -204,12 +215,57 @@ export class AppComponent {
   // str = 'hello angular';
   // val = 10;
 
-  //-------------------end-------------
-  name = '';
-  constructor(private user: UsersDataService) {
-    let data = this.user.getData();
-    //console.warn(this.user.getData());
-    this.name = data.name;
-    console.log(name);
+  //-------------------Services-------------
+  // name = '';
+  // constructor(private user: UsersDataService) {
+  //   let data = this.user.getData();
+  //   //console.warn(this.user.getData());
+  //   this.name = data.name;
+  //   console.log(name);
+  // }
+  // data = [];
+  // constructor(private user: UsersDataService) {
+  //   this.user.getData().subscribe((x) => {
+  //     console.warn(x);
+  //     this.data = x;
+  //   });
+  // }
+  //-------------------Model-------------
+  // to validate the data
+  // getData() {
+  //   const data: dataType = {
+  //     name: 'Faaiz',
+  //     id: 100,
+  //     indian: true,
+  //     address: '73 downing street',
+  //   };
+  //   return data;
+  // }
+  //-------------------LazyLoading for a component-------------
+  // imported viewContainerRef and ComponentFactoryResolver
+  constructor(
+    private viewContainer: ViewContainerRef,
+    private cfr: ComponentFactoryResolver
+  ) {
+    // turns dynamic code into a component , resolves compinent factory
+  }
+  // async function because it asyncorously loads the data and resolves it from promise
+  async loadAdmin() {
+    this.viewContainer.clear();
+    const { AdminlazylistComponent } = await import(
+      './adminlazylist/adminlazylist.component'
+    );
+    this.viewContainer.createComponent(
+      this.cfr.resolveComponentFactory(AdminlazylistComponent)
+    );
+  }
+  async loadUser() {
+    this.viewContainer.clear();
+    const { UserlistlazyComponent } = await import(
+      './userlistlazy/userlistlazy.component'
+    );
+    this.viewContainer.createComponent(
+      this.cfr.resolveComponentFactory(UserlistlazyComponent)
+    );
   }
 }

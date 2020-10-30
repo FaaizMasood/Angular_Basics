@@ -240,6 +240,88 @@
 <br /><br />
 <h2 appCustomStyle>Custom Heading</h2>
 
---------------------------------------------------------------------/  -->
+--------------------------------------------------------------------/ 
 <h1>Services in Angular</h1>
 <h1>{{ name }}</h1>
+
+-------------------------------------------------------------------/  
+<h1>Api in Angular</h1>
+<table border="1">
+  <tr>
+    <td>Id</td>
+    <td>Title</td>
+    <td>User ID</td>
+  </tr>
+
+  <tr *ngFor="let item of data">
+    <td>{{ item.id }}</td>
+    <td>{{ item.title }}</td>
+    <td>{{ item.userId }}</td>
+  </tr>
+</table>
+
+-------------------------------------------------------------------/  
+<h1>Model in Angular, its a part of typescript</h1>
+
+-------------------------------------------------------------------/  
+<h1>Recap routing or modular</h1>
+<ul>
+  <li>
+    <a routerLink="login"> Login</a>
+  </li>
+  <li>
+    <a routerLink="signup"> signup</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
+
+-------------------------------------------------------------------/  
+<h1>Routing Module</h1>
+<ul>
+  <li>
+    <a routerLink="login"> Login </a>
+  </li>
+  <li>
+    <a routerLink="list"> List </a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
+
+-------------------------------------------------------------------/  
+<h1>Group Routing Module</h1>
+<h3>Admin Page</h3>
+<ul>
+  <li>
+    <a routerLink="admin/login"> Login </a>
+  </li>
+  <li>
+    <a routerLink="admin/list"> List </a>
+  </li>
+</ul>
+<h3>User Page</h3>
+<ul>
+  <li>
+    <a routerLink="user/login"> Login </a>
+  </li>
+  <li>
+    <a routerLink="user/list"> List </a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
+
+-------------------------------------------------------------------/  
+<h1>Lazy loading</h1>
+<ul>
+  <li>
+    <a routerLink="adminlazy/login"> loogin </a>
+  </li>
+  <li>
+    <a routerLink="adminlazy/list"> liist </a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
+
+-------------------------------------------------------------------/  -->
+<h1>Lazy loading for a component</h1>
+<button (click)="loadAdmin()">Load admin list</button>
+<button (click)="loadUser()">Load user list</button>
