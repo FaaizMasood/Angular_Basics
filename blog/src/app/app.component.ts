@@ -279,15 +279,42 @@ export class AppComponent {
   //   console.warn(data);
   // }
   //-------------------reactive form-------------
-  loginForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl(''),
-    mobile: new FormControl('', Validators.required),
-  });
-  get email() {
-    return this.loginForm.get('email');
-  }
-  get mobile() {
-    return this.loginForm.get('mobile');
-  }
+  // loginForm = new FormGroup({
+  //   email: new FormControl('', Validators.required),
+  //   password: new FormControl(''),
+  //   mobile: new FormControl('', Validators.required),
+  // });
+  // get email() {
+  //   return this.loginForm.get('email');
+  // }
+  // validation in reactive forms
+  // loginForm = new FormGroup({
+  //   email: new FormControl('', Validators.required),
+  //   password: new FormControl(''),
+  // });
+
+  // get email() {
+  //   return this.loginForm.get('email');
+  // }
+  // onSubmit(data) {
+  //   console.warn(data);
+  // }
+
+  //-------------------Pre Filled form-------------
+  // userData = {
+  //   email: 'faaizmasood@gmail.com',
+  //   password: '12345678',
+  //   address: 'worcester',
+  //   mobile: '090078601',
+  // };
+  //-------------------Reactive form-------------
+  // this accepts an object
+  // loginForm = new FormGroup({
+  //   userName: new FormControl('anil'),
+  //   password: new FormControl('233'),
+  // });
+  // collectData() {
+  //   //data = this.loginForm;
+  //   console.warn(this.loginForm.value);
+  // }
 }
